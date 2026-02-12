@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Inscription</title>
+    <link rel="stylesheet" href="Style/inscription.css" />
+  </head>
+
+  <body>
+    <header>
+      <a href="accueil.html">
+        <img src="IMG/logo_epsi_8b6f0271b8.png" alt="Logo" />
+      </a>
+
+      <nav>
+        <ul class="un_list">
+          <li><a href="accueil.html">Accueil</a></li>
+          <li><a href="a_ propos.html">A propos</a></li>
+          <li><a href="nous_contacter.html">Nous contacter</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="adhesion-container">
+      <form
+        action="inscription.php"
+        method="POST"
+        id="formInscription"
+        class="inscription"
+      >
+        <h2>Créer un compte</h2>
+
+        <div id="message"></div>
+
+        <input type="text" name="nom" placeholder="Nom" required />
+        <input type="text" name="prenom" placeholder="Prénom" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input
+          type="password"
+          name="mot_de_passe"
+          placeholder="Mot de passe"
+          required
+        />
+
+        <button type="submit">S'inscrire</button>
+
+        <p>Déjà un compte ? <a href="connexion.html">Se connecter</a></p>
+      </form>
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-links">
+          <a href="#">Mentions légales</a>
+          <a href="#">Confidentialité</a>
+        </div>
+        <div class="footer-info">
+          <p>© 2025 EPSI Tech Store — Tous droits réservés</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        const params = new URLSearchParams(location.search);
+        const msg = document.getElementById('message');
+        if (params.get('error')) {
+          const err = params.get('error');
+          if (err === 'exists') msg.innerText = 'Cet email est déjà utilisé.';
+          else if (err === 'invalidemail') msg.innerText = 'Email invalide.';
+          else if (err === 'shortpass')
+            msg.innerText = 'Le mot de passe est trop court (6+).';
+          else if (err === 'empty')
+            msg.innerText = 'Veuillez remplir tous les champs.';
+          else msg.innerText = 'Erreur serveur, réessayez plus tard.';
+          msg.style.color = 'red';
+        }
+      })();
+    </script>
+    <!-- messages -->
+    <div id="message">
+      <!-- message affiché via JS léger -->
+    </div>
+  </body>
+</html>

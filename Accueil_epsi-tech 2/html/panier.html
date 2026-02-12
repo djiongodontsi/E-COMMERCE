@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mon Panier</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/panier.js" defer></script>
+    <link rel="stylesheet" href="../CSS/panier.css">
+</head>
+
+<body>
+    <header>
+        <a href="accueil.html">
+            <img src="../images/logo epsi.png" alt="Logo" />
+        </a>
+
+        <nav>
+            <ul class="unlist">
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="A propos.html">A propos</a></li>
+                <li><a href="Nous contacter.html">Nous Contacter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Mon Panier 🛒</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Prix</th>
+                    <th>Quantité</th>
+                    <th>Total</th>
+                    <th>Supprimer</th>
+                </tr>
+            </thead>
+            <tbody id="panier-corps"></tbody>
+        </table>
+
+        <div class="total" id="total-panier">Total : 0 €</div>
+        a<button id="payer-btn" class="btn-pay"><a href="paiement.html">Procéder au paiement</a></button>
+        <!-- Payment confirmation toast -->
+        <div id="payment-toast" class="payment-toast" role="status" aria-live="polite">Paiement effectué ✓</div>
+    </div>
+    <script>
+        (function () {
+            const payerBtn = document.getElementById('payer-btn');
+            const toast = document.getElementById('payment-toast');
+
+            function showToast(message) {
+                toast.textContent = message;
+                toast.classList.add('show');
+                // hide after 2.6s
+                setTimeout(() => toast.classList.remove('show'), 2600);
+            }
+
+            payerBtn && payerBtn.addEventListener('click', function () {
+                // Disable and show processing
+                payerBtn.disabled = true;
+                const origText = payerBtn.textContent;
+                payerBtn.textContent = 'Traitement…';
+
+                // simulate processing delay
+                setTimeout(() => {
+                    // show success toast
+                    showToast('Paiement effectué ✓');
+
+                    // restore button and clear cart (mock)
+                    payerBtn.textContent = origText;
+                    payerBtn.disabled = false;
+
+                    try { localStorage.removeItem('panier'); } catch (e) { }
+                }, 1400);
+            });
+        })();
+    </script>
+</body>
+
+</html>

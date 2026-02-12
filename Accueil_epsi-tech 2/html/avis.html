@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avis Clients - Boutique Électronique</title>
+    <link rel="icon" href="../images/logo epsi.png" type="image/png">
+    <link rel="stylesheet" href="../CSS/avis.css">
+</head>
+
+<body>
+    <!-- 🔹 En-tête -->
+    <header class="main-header">
+        <div class="logo-container">
+            <a href="accueil.html">
+                <img src="../images/logo epsi.png" alt="Logo de la boutique" class="logo">
+            </a>
+        </div>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="A propos.html">À propos</a></li>
+                <li><a href="Nous contacter.html">Nous contacter</a></li>
+                <li><a href="avis.html" class="active">Avis</a></li>
+            </ul>
+        </nav>
+
+        <div class="user-links">
+            <a href="accueil.html" class="btn-primary">Déconnexion</a>
+        </div>
+    </header>
+
+    <!-- 🔹 Section principale -->
+    <main class="avis-section">
+        <h1>Vos Avis Comptent ! ⭐</h1>
+        <p class="intro">
+            Partagez votre expérience avec notre boutique et découvrez ce que pensent les autres clients.
+        </p>
+
+        <!-- 🔸 Formulaire d'avis -->
+        <section class="avis-formulaire">
+            <h2>Laisser un Avis</h2>
+            <form id="avis-form">
+                <input type="text" name="nom" placeholder="Votre nom" required>
+                <input type="email" name="email" placeholder="Votre email" required>
+                <select name="note" required>
+                    <option value="">Note</option>
+                    <option value="5">★★★★★ - Excellent</option>
+                    <option value="4">★★★★☆ - Très bon</option>
+                    <option value="3">★★★☆☆ - Moyen</option>
+                    <option value="2">★★☆☆☆ - Médiocre</option>
+                    <option value="1">★☆☆☆☆ - Mauvais</option>
+                </select>
+                <textarea name="message" rows="5" placeholder="Votre avis..." required></textarea>
+                <button type="submit" class="btn-primary">Envoyer</button>
+            </form>
+        </section>
+
+        <!-- 🔸 Message de confirmation -->
+        <div id="confirmation-message" class="confirmation-message">
+            Merci pour votre avis ! Il a bien été pris en compte.
+        </div>
+
+        <!-- 🔸 Liste des avis -->
+        <section class="avis-liste" id="avis-liste">
+            <h2>Avis des Clients</h2>
+
+            <div class="avis-item">
+                <h3>Marie L.</h3>
+                <p>★★★★★ - Super boutique, produits de qualité et livraison rapide !</p>
+            </div>
+
+            <div class="avis-item">
+                <h3>Lucas D.</h3>
+                <p>★★★★☆ - Très satisfait, juste un petit délai sur la livraison.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- 🔹 Pied de page -->
+    <footer>
+        <p>© 2025 Boutique Électronique - Tous droits réservés</p>
+    </footer>
+
+    <!-- 🔹 Script -->
+    <script>
+        const form = document.getElementById("avis-form");
+        const confirmation = document.getElementById("confirmation-message");
+        const avisListe = document.getElementById("avis-liste");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const nom = this.nom.value.trim();
+            const note = this.note.options[this.note.selectedIndex].text;
+            const message = this.message.value.trim();
+
+            const newAvis = document.createElement("div");
+            newAvis.classList.add("avis-item");
+            newAvis.innerHTML = `<h3>${nom}</h3><p>${note} - ${message}</p>`;
+
+            avisListe.appendChild(newAvis);
+
+            confirmation.classList.add("show");
+            this.reset();
+
+            setTimeout(() => confirmation.classList.remove("show"), 5000);
+        });
+    </script>
+</body>
+
+</html>

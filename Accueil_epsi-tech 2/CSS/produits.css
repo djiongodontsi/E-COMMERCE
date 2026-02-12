@@ -1,0 +1,613 @@
+/* ===== RESET ET VARIABLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-light: #3b82f6;
+    --secondary: #8b5cf6;
+    --accent: #06b6d4;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --error: #ef4444;
+    --text: #1f2937;
+    --text-light: #6b7280;
+    --text-lighter: #9ca3af;
+    --background: #ffffff;
+    --background-alt: #f8fafc;
+    --background-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --border: #e5e7eb;
+    --border-light: #f3f4f6;
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --radius: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+}
+
+/* ===== BASE STYLES ===== */
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+    background-color: var(--background);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== HEADER ===== */
+.header {
+    background: var(--background);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Logo */
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.logo-link:hover {
+    transform: translateY(-2px);
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    box-shadow: var(--shadow-md);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-name {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    letter-spacing: -0.025em;
+}
+
+.logo-tagline {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* Navigation */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--primary);
+    background: var(--background-alt);
+    transform: translateY(-2px);
+}
+
+/* Actions de navigation */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-box input {
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+    width: 250px;
+    transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.search-btn {
+    position: absolute;
+    right: 0.5rem;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: var(--radius);
+    transition: color 0.3s ease;
+}
+
+.search-btn:hover {
+    color: var(--primary);
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cart-icon,
+.user-icon {
+    position: relative;
+    color: var(--text);
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: var(--radius);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-icon:hover,
+.user-icon:hover {
+    background: var(--background-alt);
+    color: var(--primary);
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+/* ===== BREADCRUMB ===== */
+.breadcrumb {
+    background: var(--background-alt);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb .container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: var(--primary);
+}
+
+.breadcrumb .current {
+    color: var(--text);
+    font-weight: 500;
+}
+
+.breadcrumb i {
+    font-size: 0.7rem;
+    color: var(--text-lighter);
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+    flex: 1;
+    padding: 2rem 0;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.page-header p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* ===== LAYOUT BOUTIQUE ===== */
+.shop-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* ===== SIDEBAR FILTRES ===== */
+.filters-sidebar {
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 1.5rem;
+    position: sticky;
+    top: 100px;
+    box-shadow: var(--shadow-md);
+}
+
+.filters-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.filters-header h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.clear-filters {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 0.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: color 0.3s ease;
+}
+
+.clear-filters:hover {
+    color: var(--error);
+}
+
+.filter-group {
+    margin-bottom: 2rem;
+}
+
+.filter-group h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.filter-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text);
+    transition: color 0.3s ease;
+    padding: 0.5rem;
+    border-radius: var(--radius);
+}
+
+.filter-checkbox:hover {
+    background: var(--background-alt);
+}
+
+.filter-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.filter-checkbox input:checked+.checkmark {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.filter-checkbox input:checked+.checkmark::after {
+    content: '✓';
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.filter-checkbox i {
+    width: 16px;
+    color: var(--text-light);
+}
+
+.product-count {
+    color: var(--text-light);
+    font-size: 0.8rem;
+    margin-left: auto;
+}
+
+/* Filtre Prix */
+.price-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.price-inputs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.price-inputs input {
+    width: 80px;
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.price-inputs input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.price-slider {
+    padding: 0.5rem 0;
+}
+
+.price-slider input[type="range"] {
+    width: 100%;
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    outline: none;
+}
+
+.price-slider input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: var(--primary);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.price-display {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    text-align: center;
+}
+
+/* Filtre Notes */
+.rating-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.rating-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: var(--radius);
+    transition: background 0.3s ease;
+}
+
+.rating-option:hover {
+    background: var(--background-alt);
+}
+
+.rating-option input[type="radio"] {
+    display: none;
+}
+
+.rating-option input:checked+.stars {
+    color: var(--warning);
+}
+
+.stars {
+    color: var(--border);
+    display: flex;
+    gap: 0.1rem;
+}
+
+.rating-option span {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+/* Checkbox Promotion */
+.promo-checkbox {
+    position: relative;
+}
+
+.promo-badge {
+    background: var(--error);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-left: auto;
+}
+
+/* ===== SECTION PRODUITS ===== */
+.products-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.products-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.results-info {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.sort-options {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sort-options label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.sort-options select {
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--background);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.sort-options select:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.view-options {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.view-btn {
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    background: var(--background);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+}
+
+.view-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.view-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+/* ===== GRILLE PRODUITS ===== */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.products-grid.list-view {
+    grid-template-columns: 1fr;
+}
+
+.products-grid.list-view .product-card {
+    display: grid;
+    grid-template-columns: 200px
+}

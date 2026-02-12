@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - TechSphere</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../CSS/connections.css">
+    <link rel="icon" href="../images/logo epsi.png" type="image/png">
+</head>
+
+<body class="login-page">
+    <!-- Header existant -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">EPSItech</a>
+            <ul class="nav-links">
+                <li><a href="produits.html">Produits</a></li>
+                <li><a href="panier.html">Panier</a></li>
+                <li><a href="compte.html">Mon Compte</a></li>
+                <li><a href="connexion.html" class="active">Connexion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page de connexion -->
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h1 class="login-title">Connexion</h1>
+                <p class="login-subtitle">Accédez à votre compte EPSItech</p>
+            </div>
+
+            <form class="login-form">
+                <!-- Email -->
+                <div class="form-group">
+                    <label class="form-label">
+                        <span class="checkbox-input"></span>
+                        Adresse email
+                    </label>
+                    <input type="email" class="form-input" placeholder="alice@example.com" required>
+                </div>
+
+                <!-- Mot de passe -->
+                <div class="form-group">
+                    <label class="form-label">
+                        <span class="checkbox-input" style="background: #667eea; border-color: #667eea;"></span>
+                        Mot de passe
+                    </label>
+                    <input type="password" class="form-input" placeholder="••••••••" required>
+                </div>
+
+                <!-- Options -->
+                <div class="form-options">
+                    <label class="remember-me checkbox-container">
+                        <span class="checkbox-input"></span>
+                        Se souvenir de moi
+                    </label>
+                    <a href="mot-de-passe-oublie.html" class="forgot-password">Mot de passe oublié ?</a>
+                </div>
+
+                <!-- Bouton de connexion -->
+                <button type="submit" class="login-btn">Se connecter</button>
+
+                <div class="separator"></div>
+
+                <!-- Lien d'inscription -->
+                <div class="signup-link">
+                    <p class="signup-text">Pas encore de compte ?</p>
+                    <a href="inscription.html" class="signup-btn">S'inscrire</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer existant -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 TechSphere. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

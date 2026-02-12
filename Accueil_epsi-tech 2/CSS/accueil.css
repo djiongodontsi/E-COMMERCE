@@ -1,0 +1,178 @@
+/* -------------------------
+   STYLE GLOBAL
+-------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f9fafc;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* -------------------------
+   HEADER
+-------------------------- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0b3d91;
+    color: #fff;
+    padding: 15px 40px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    height: 60px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #ffd700;
+}
+
+/* -------------------------
+   USER LINKS
+-------------------------- */
+.user-links {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-primary,
+.btn-outline {
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-primary {
+    background-color: #ffd700;
+    color: #0b3d91;
+}
+
+.btn-primary:hover {
+    background-color: #e5c100;
+}
+
+.btn-outline {
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.btn-outline:hover {
+    background-color: #fff;
+    color: #0b3d91;
+}
+
+/* -------------------------
+   SECTION HERO
+-------------------------- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 80px;
+    background: linear-gradient(to right, #e6f0ff, #ffffff);
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    color: #0b3d91;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+.hero-image {
+    width: 400px;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* -------------------------
+   FEATURES SECTION
+-------------------------- */
+.features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 60px 30px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.feature {
+    max-width: 300px;
+    margin: 20px;
+}
+
+.feature h3 {
+    color: #0b3d91;
+    margin-bottom: 10px;
+}
+
+/* -------------------------
+   FOOTER
+-------------------------- */
+footer {
+    background-color: #0b3d91;
+    color: #fff;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* -------------------------
+   RESPONSIVE DESIGN
+-------------------------- */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .main-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}

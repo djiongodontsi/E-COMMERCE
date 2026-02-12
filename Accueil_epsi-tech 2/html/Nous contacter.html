@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nous Contacter - Boutique Électronique</title>
+    <link rel="icon" href="../images/logo_epsi.png" type="image/png">
+    <link rel="stylesheet" href="../CSS/Nous contacter.css">
+</head>
+
+<body>
+    <!-- 🔹 Message de confirmation (caché par défaut) -->
+    <div id="confirmation-message" class="confirmation-message">
+        Merci, votre préoccupation est bien prise en compte et vous recevrez un retour dans les plus brefs délais.
+    </div>
+
+    <!-- 🔹 En-tête -->
+    <header class="main-header">
+        <div class="logo-container">
+            <a href="accueil.html">
+                <img src="../images/logo epsi.png" alt="Logo de la boutique" class="logo">
+            </a>
+        </div>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="A propos.html">À propos</a></li>
+                <li><a href="Nous contacter.html" class="active">Nous contacter</a></li>
+            </ul>
+        </nav>
+
+        <div class="user-links">
+            <a href="inscription.html" class="btn-outline">Inscription</a>
+            <a href="connection.html" class="btn-primary">Connexion</a>
+        </div>
+    </header>
+
+    <!-- 🔹 Section principale -->
+    <main class="contact-section">
+        <h1>Besoin d’aide ? Contactez-nous !</h1>
+        <p class="intro">
+            Notre équipe est là pour répondre à toutes vos questions concernant nos produits, vos commandes ou nos
+            services.
+        </p>
+
+        <div class="contact-info">
+            <ul>
+                <li>📞 <strong>Téléphone :</strong> 07 63 96 14 05</li>
+                <li>📧 <strong>Email :</strong> nicolas.rabian@ecoles-epsi.net</li>
+                <li>📍 <strong>Adresse :</strong> 1 Rue Sainte-Marie, 92400 Courbevoie</li>
+                <li>📮 <strong>Code postal :</strong> 92200</li>
+            </ul>
+        </div>
+
+        <!-- 🔹 Formulaire de contact -->
+        <form class="contact-form" id="contact-form">
+            <h2>Envoyez-nous un message</h2>
+            <input type="text" name="nom" placeholder="Votre nom" required>
+            <input type="email" name="email" placeholder="Votre email" required>
+            <textarea name="message" rows="5" placeholder="Votre message..." required></textarea>
+            <button type="submit" class="btn-primary">Envoyer</button>
+        </form>
+    </main>
+
+    <!-- 🔹 Réseaux sociaux -->
+    <section class="social-section">
+        <h2>Suivez-nous sur les réseaux sociaux</h2>
+        <div class="social-icons">
+            <a href="https://x.com/home"><img src="../images/Twitter.png" alt="Twitter"></a>
+            <a href="https://www.tiktok.com/fr"><img src="../images/Tiktok.png" alt="TikTok"></a>
+            <a href="https://www.instagram.com"><img src="../images/instagram.png" alt="Instagram"></a>
+        </div>
+    </section>
+
+    <!-- 🔹 Pied de page -->
+    <footer>
+        <p>© 2025 Boutique Électronique - Tous droits réservés</p>
+    </footer>
+
+    <!-- 🔹 Script JS -->
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function (event) {
+            event.preventDefault(); // Empêche le rechargement de la page
+
+            // Afficher le message de confirmation
+            const confirmation = document.getElementById("confirmation-message");
+            confirmation.classList.add("show");
+
+            // Réinitialiser le formulaire
+            this.reset();
+
+            // Cacher le message après 6 secondes (facultatif)
+            setTimeout(() => {
+                confirmation.classList.remove("show");
+            }, 6000);
+        });
+    </script>
+</body>
+
+</html>

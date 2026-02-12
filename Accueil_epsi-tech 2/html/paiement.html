@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement Simple</title>
+    <link rel="stylesheet" href="../CSS/paiement.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Finaliser votre paiement</h1>
+            <div class="secure">🔒 Paiement sécurisé</div>
+        </div>
+
+        <div class="checkout-box">
+            <!-- Récapitulatif -->
+
+
+            <!-- Informations de paiement -->
+            <div class="payment-info">
+                <h2>Informations de paiement</h2>
+
+                <div class="input-group">
+                    <label>Numéro de carte</label>
+                    <input type="text" placeholder="1234 5678 9012 3456" maxlength="19">
+                </div>
+
+                <div class="row">
+                    <div class="input-group">
+                        <label>Date d'expiration</label>
+                        <input type="text" placeholder="MM/AA" maxlength="5">
+                    </div>
+                    <div class="input-group">
+                        <label>CVV</label>
+                        <input type="text" placeholder="123" maxlength="3">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Nom sur la carte</label>
+                    <input type="text" placeholder="JEAN DUPONT">
+                </div>
+
+                <!-- Méthodes de paiement rapides -->
+                <div class="quick-payments">
+                    <button class="pay-method" onclick="selectPayment('card')">
+                        💳 Carte bancaire
+                    </button>
+                    <button class="pay-method" onclick="selectPayment('paypal')">
+                        🔵 PayPal
+                    </button>
+                    <button class="pay-method" onclick="selectPayment('apple')">
+                        📱 Apple Pay
+                    </button>
+                </div>
+
+                <button class="pay-btn" onclick="processPayment()">
+
+                </button>
+
+                <div class="security">
+                    <p>✅ Paiement 100% sécurisé</p>
+                    <p>✅ Garantie satisfait ou remboursé</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function selectPayment(method) {
+            // Retirer la sélection de tous les boutons
+            document.querySelectorAll('.pay-method').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+
+            // Ajouter la sélection au bouton cliqué
+            event.target.classList.add('selected');
+
+            alert('Méthode sélectionnée : ' + method);
+        }
+
+        function processPayment() {
+            const btn = document.querySelector('.pay-btn');
+            btn.textContent = 'Paiement en cours...';
+            btn.disabled = true;
+
+            // Simulation de traitement
+            setTimeout(() => {
+                alert('✅ Paiement accepté ! Merci pour votre achat.');
+                btn.textContent = 'Paiement réussi !';
+            }, 2000);
+        }
+
+        // Formatage automatique de la carte
+        document.querySelector('input[placeholder*="1234"]').addEventListener('input', function (e) {
+            let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+            let formatted = value.match(/.{1,4}/g)?.join(' ');
+            if (formatted) e.target.value = formatted;
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,177 @@
+/* -------------------------
+   STYLE GLOBAL
+-------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f9fafc;
+    color: #333;
+    line-height: 1.7;
+}
+
+/* -------------------------
+   HEADER
+-------------------------- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0b3d91;
+    color: #fff;
+    padding: 15px 40px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    height: 60px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #ffd700;
+}
+
+/* -------------------------
+   USER LINKS
+-------------------------- */
+.user-links {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-primary,
+.btn-outline {
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-primary {
+    background-color: #ffd700;
+    color: #0b3d91;
+}
+
+.btn-primary:hover {
+    background-color: #e5c100;
+}
+
+.btn-outline {
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.btn-outline:hover {
+    background-color: #fff;
+    color: #0b3d91;
+}
+
+/* -------------------------
+   SECTION À PROPOS
+-------------------------- */
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 80px 60px;
+    background: linear-gradient(to right, #e6f0ff, #ffffff);
+}
+
+.about-content {
+    flex: 1 1 500px;
+    max-width: 600px;
+    padding-right: 40px;
+}
+
+.about-content h1 {
+    font-size: 2.4rem;
+    color: #0b3d91;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.about-content .btn-primary {
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.about-image {
+    flex: 1 1 400px;
+    text-align: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* -------------------------
+   FOOTER
+-------------------------- */
+footer {
+    background-color: #0b3d91;
+    color: #fff;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* -------------------------
+   RESPONSIVE DESIGN
+-------------------------- */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .about-content {
+        padding-right: 0;
+    }
+
+    .about-image img {
+        margin-top: 25px;
+    }
+}

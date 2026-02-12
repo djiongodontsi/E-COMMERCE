@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique - TechSphere</title>
+    <link rel="stylesheet" href="../CSS/produits.css">
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-name">TechSphere</span>
+                        <span class="logo-tagline">Votre univers tech</span>
+                    </div>
+                </a>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="accueil.html"><i class="fas fa-home"></i> Accueil</a></li>
+                <li><a href="panier.html" class="active"><i class="fas fa-shopping-bag"></i> Boutique</a></li>
+                <li><a href="A propos.html"><i class="fas fa-info-circle"></i> À propos</a></li>
+                <li><a href="Nous contacter.html"><i class="fas fa-life-ring"></i> Aide</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Rechercher un produit...">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+
+                <div class="user-actions">
+                    <a href="panier.html" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <a href="connexion.html" class="user-icon">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Accueil</a>
+            <i class="fas fa-chevron-right"></i>
+            <span class="current">Boutique</span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- En-tête de page -->
+            <div class="page-header">
+                <h1><i class="fas fa-shopping-bag"></i> Notre Boutique</h1>
+                <p>Découvrez notre sélection de produits high-tech</p>
+            </div>
+
+            <div class="shop-layout">
+                <!-- Sidebar Filtres -->
+                <aside class="filters-sidebar">
+                    <div class="filters-header">
+                        <h3><i class="fas fa-filter"></i> Filtres</h3>
+                        <button class="clear-filters" id="clearFilters">
+                            <i class="fas fa-times"></i> Effacer
+                        </button>
+                    </div>
+
+                    <!-- Filtre Catégories -->
+                    <div class="filter-group">
+                        <h4>Catégories</h4>
+                        <div class="filter-options">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="category" value="ordinateurs">
+                                <span class="checkmark"></span>
+                                <i class="fas fa-desktop"></i>
+                                Ordinateurs
+                                <span class="product-count">(24)</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="category" value="composants">
+                                <span class="checkmark"></span>
+                                <i class="fas fa-microchip"></i>
+                                Composants
+                                <span class="product-count">(36)</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="category" value="peripheriques">
+                                <span class="checkmark"></span>
+                                <i class="fas fa-keyboard"></i>
+                                Périphériques
+                                <span class="product-count">(42)</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="category" value="gaming">
+                                <span class="checkmark"></span>
+                                <i class="fas fa-gamepad"></i>
+                                Gaming
+                                <span class="product-count">(18)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Filtre Prix -->
+                    <div class="filter-group">
+                        <h4>Prix</h4>
+                        <div class="price-filter">
+                            <div class="price-inputs">
+                                <input type="number" id="minPrice" placeholder="Min" min="0" max="5000">
+                                <span>-</span>
+                                <input type="number" id="maxPrice" placeholder="Max" min="0" max="5000">
+                            </div>
+                            <div class="price-slider">
+                                <input type="range" id="priceRange" min="0" max="5000" step="50" value="5000">
+                            </div>
+                            <div class="price-display">
+                                Prix max: <span id="currentMaxPrice">5000</span>€
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Filtre Marques -->
+                    <div class="filter-group">
+                        <h4>Marques</h4>
+                        <div class="filter-options">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="brand" value="asus">
+                                <span class="checkmark"></span>
+                                ASUS
+                                <span class="product-count">(12)</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="brand" value="msi">
+                                <span class="checkmark"></span>
+                                MSI
+                                <span class="product-count">(8)</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="brand" value="razer">
+                                <span class="checkmark"></span>
+                                Razer
+                                <span class="product-count">(15)</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="brand" value="logitech">
+                                <span class="checkmark"></span>
+                                Logitech
+                                <span class="product-count">(20)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Filtre Notes -->
+                    <div class="filter-group">
+                        <h4>Notes</h4>
+                        <div class="rating-filter">
+                            <label class="rating-option">
+                                <input type="radio" name="rating" value="4">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>& plus</span>
+                            </label>
+                            <label class="rating-option">
+                                <input type="radio" name="rating" value="3">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span>& plus</span>
+                            </label>
+                            <label class="rating-option">
+                                <input type="radio" name="rating" value="2">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span>& plus</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Filtre Promotions -->
+                    <div class="filter-group">
+                        <label class="filter-checkbox promo-checkbox">
+                            <input type="checkbox" name="promo" value="1">
+                            <span class="checkmark"></span>
+                            <i class="fas fa-tag"></i>
+                            En promotion
+                            <span class="promo-badge">-20%</span>
+                        </label>
+                    </div>
+                </aside>
+
+                <!-- Section Produits -->
+                <section class="products-section">
+                    <!-- Barre d'outils -->
+                    <div class="products-toolbar">
+                        <div class="results-info">
+                            <span id="productsCount">24</span> produits trouvés
+                        </div>
+
+                        <div class="sort-options">
+                            <label for="sortSelect">Trier par:</label>
+                            <select id="sortSelect">
+                                <option value="popularite">Popularité</option>
+                                <option value="nouveaute">Nouveautés</option>
+                                <option value="prix-croissant">Prix croissant</option>
+                                <option value="prix-decroissant">Prix décroissant</option>
+                                <option value="note">Meilleures notes</option>
+                            </select>
+                        </div>
+
+                        <div class="view-options">
+                            <button class="view-btn active" data-view="grid">
+                                <i class="fas fa-th"></i>
+                            </button>
+                            <button class="view-btn" data-view="list">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Grille des produits -->
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Produit 1 -->
+                        <div class="product-card" data-category="ordinateurs" data-brand="asus" data-price="1299"
+                            data-rating="4.5" data-promo="true">
+                            <div class="product-badges">
+                                <span class="badge promo">-20%</span>
+                                <span class="badge new">Nouveau</span>
+                            </div>
+                            <div class="product-image">
+                                <img src="images/pc-gamer.jpg" alt="PC Gamer Ultimate"
+                                    onerror="this.src='https://via.placeholder.com/300x200?text=PC+Gamer'">
+                                <div class="product-actions">
+                                    <button class="action-btn wishlist-btn" title="Ajouter aux favoris">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                    <button class="action-btn quick-view-btn" title="Vue rapide">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn compare-btn" title="Comparer">
+                                        <i class="fas fa-exchange-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">PC Gamer Ultimate</h3>
+                                <p class="product-description">RTX 4080, Intel i9, 32GB RAM, 1TB SSD</p>
+                                <div class="product-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-value">4.5</span>
+                                    <span class="review-count">(24 avis)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">1 299,00 €</span>
+                                    <span class="original-price">1 599,00 €</span>
+                                </div>
+                                <div class="product-stock">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>En stock</span>
+                                </div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Ajouter au panier
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Produit 2 -->
+                        <div class="product-card" data-category="peripheriques" data-brand="razer" data-price="89"
+                            data-rating="4.2" data-promo="false">
+                            <div class="product-badges">
+                                <span class="badge bestseller">Best-seller</span>
+                            </div>
+                            <div class="product-image">
+                                <img src="images/clavier-gamer.jpg" alt="Clavier Mécanique Gaming"
+                                    onerror="this.src='https://via.placeholder.com/300x200?text=Clavier+Gamer'">
+                                <div class="product-actions">
+                                    <button class="action-btn wishlist-btn" title="Ajouter aux favoris">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                    <button class="action-btn quick-view-btn" title="Vue rapide">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Clavier Mécanique RGB</h3>
+                                <p class="product-description">Switches bleus, rétroéclairage RGB, anti-ghosting</p>
+                                <div class="product-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="rating-value">4.2</span>
+                                    <span class="review-count">(156 avis)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">89,99 €</span>
+                                </div>
+                                <div class="product-stock low-stock">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <span>Stock limité</span>
+                                </div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Ajouter au panier
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Produit 3 -->
+                        <div class="product-card" data-category="composants" data-brand="msi" data-price="549"
+                            data-rating="4.8" data-promo="true">
+                            <div class="product-badges">
+                                <span class="badge promo">-15%</span>
+                            </div>
+                            <div class="product-image">
+                                <img src="images/carte-graphique.jpg" alt="Carte Graphique RTX 4070"
+                                    onerror="this.src='https://via.placeholder.com/300x200?text=Carte+Graphique'">
+                                <div class="product-actions">
+                                    <button class="action-btn wishlist-btn" title="Ajouter aux favoris">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                    <button class="action-btn quick-view-btn" title="Vue rapide">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Carte Graphique RTX 4070</h3>
+                                <p class="product-description">12GB GDDR6X, Ray Tracing, DLSS 3</p>
+                                <div class="product-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="rating-value">4.8</span>
+                                    <span class="review-count">(89 avis)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">549,00 €</span>
+                                    <span class="original-price">649,00 €</span>
+                                </div>
+                                <div class="product-stock">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>En stock</span>
+                                </div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Ajouter au panier
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Plus de produits... -->
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="page-btn disabled">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <span class="page-dots">...</span>
+                        <button class="page-btn">8</button>
+                        <button class="page-btn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-name">TechSphere</span>
+                        </div>
+                    </div>
+                    <p>Votre partenaire de confiance pour tous vos besoins informatiques.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Catégories</h4>
+                    <ul>
+                        <li><a href="#">Ordinateurs</a></li>
+                        <li><a href="#">Composants</a></li>
+                        <li><a href="#">Périphériques</a></li>
+                        <li><a href="#">Gaming</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Assistance</h4>
+                    <ul>
+                        <li><a href="aide.html">Centre d'aide</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Livraison</a></li>
+                        <li><a href="#">Retours</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Rue de la Tech, Paris</p>
+                    <p><i class="fas fa-phone"></i> +33 1 23 45 67 89</p>
+                    <p><i class="fas fa-envelope"></i> contact@techsphere.fr</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TechSphere. Tous droits réservés.</p>
+                <div class="footer-links">
+                    <a href="confidentialite.html">Confidentialité</a>
+                    <a href="conditions.html">Conditions</a>
+                    <a href="cookies.html">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Vue Rapide -->
+    <div id="quickViewModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="quick-view-content">
+                <!-- Contenu chargé dynamiquement -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/produits.js"></script>
+</body>
+
+</html>

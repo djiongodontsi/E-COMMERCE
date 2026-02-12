@@ -1,0 +1,253 @@
+/* -------------------------
+   STYLE GLOBAL
+-------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f9fafc;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* -------------------------
+   HEADER
+-------------------------- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0b3d91;
+    color: #fff;
+    padding: 15px 40px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    height: 60px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #ffd700;
+}
+
+/* -------------------------
+   USER LINKS
+-------------------------- */
+.user-links {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-primary,
+.btn-outline {
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-primary {
+    background-color: #ffd700;
+    color: #0b3d91;
+}
+
+.btn-primary:hover {
+    background-color: #e5c100;
+}
+
+.btn-outline {
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.btn-outline:hover {
+    background-color: #fff;
+    color: #0b3d91;
+}
+
+/* -------------------------
+   SECTION CONTACT
+-------------------------- */
+.contact-section {
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+.contact-section h1 {
+    color: #0b3d91;
+    font-size: 2.3rem;
+    margin-bottom: 15px;
+}
+
+.contact-section .intro {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.contact-info ul {
+    list-style: none;
+    text-align: left;
+    margin: 0 auto 50px;
+    max-width: 500px;
+}
+
+.contact-info li {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+/* -------------------------
+   FORMULAIRE DE CONTACT
+-------------------------- */
+.contact-form {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: left;
+    max-width: 600px;
+    margin: auto;
+}
+
+.contact-form h2 {
+    text-align: center;
+    color: #0b3d91;
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    resize: none;
+}
+
+.contact-form button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+/* -------------------------
+   RÉSEAUX SOCIAUX
+-------------------------- */
+.social-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #eef3ff;
+}
+
+.social-section h2 {
+    color: #0b3d91;
+    margin-bottom: 25px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-icons img {
+    width: 50px;
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+/* -------------------------
+   FOOTER
+-------------------------- */
+footer {
+    background-color: #0b3d91;
+    color: #fff;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 40px;
+}
+
+/* -------------------------
+   RESPONSIVE DESIGN
+-------------------------- */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-section {
+        padding: 40px 15px;
+    }
+
+    .contact-form {
+        width: 90%;
+    }
+
+    .social-icons img {
+        width: 40px;
+    }
+}
+
+/* 🔹 Message de confirmation */
+.confirmation-message {
+    display: none;
+    background-color: #0b3d91;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    animation: fadeDown 0.5s ease-in-out;
+}
+
+/* Quand le message s’affiche */
+.confirmation-message.show {
+    display: block;
+}
+
+/* Animation douce */
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

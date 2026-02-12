@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mot de passe oublié</title>
+    <link rel="stylesheet" href="../CSS/passeword.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <a href="accueil.html"><img src="../images/logo epsi.png" alt="Logo" class="logo"></a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="A propos.html">À propos</a></li>
+                <li><a href="Nous contacter.html">Nous contacter</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="auth-container">
+        <div class="card">
+            <h1>Réinitialiser le mot de passe</h1>
+            <p>Entrez votre adresse email. Si un compte existe, vous recevrez un lien pour réinitialiser votre mot de
+                passe.</p>
+
+            <?php if ($feedback): ?>
+            <div class="feedback">
+                <?= $feedback ?>
+            </div>
+            <?php endif; ?>
+
+            <form method="post" novalidate>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required>
+
+                <button type="submit" class="btn-primary">Envoyer le lien</button>
+            </form>
+            <p><a href="connection.html">Retour connexion</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Boutique Électronique</p>
+    </footer>
+</body>
+
+</html>
