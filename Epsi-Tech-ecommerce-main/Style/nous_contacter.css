@@ -1,0 +1,220 @@
+/* ========================== RESET ========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* ========================== GLOBAL ========================== */
+body {
+  background-color: #f5f7fa;
+  color: #1a1a1a;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ========================== HEADER ========================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 15px 60px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header img {
+  height: 60px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+header img:hover {
+  transform: scale(1.05);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-weight: 600;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #0066ff;
+}
+
+/* ========================== SUB HEADER ========================== */
+.sub_header {
+  background: linear-gradient(to right, #0066ff, #00b8ff);
+  color: white;
+  padding: 10px 60px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sub_header ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.sub_header li {
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.sub_header li:hover {
+  opacity: 0.8;
+}
+
+/* ========================== CONTACT ========================== */
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+  width: 90%;
+  margin: 60px auto;
+  flex-wrap: wrap;
+}
+
+/* ---- Partie gauche ---- */
+.contact-info {
+  flex: 1;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.contact-info h1 {
+  font-size: 2rem;
+  color: #0f141e;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  font-size: 1.05rem;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.contact-info ul {
+  list-style: none;
+  line-height: 2;
+}
+
+.contact-info li strong {
+  color: #0066ff;
+}
+
+/* ---- Partie droite (formulaire) ---- */
+.contact-form {
+  flex: 1;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form h2 {
+  margin-bottom: 20px;
+  color: #0f141e;
+}
+
+.contact-form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #0066ff;
+  outline: none;
+}
+
+.contact-form button {
+  background: linear-gradient(to right, #0066ff, #00b8ff);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 102, 255, 0.3);
+}
+
+/* ========================== FOOTER ========================== */
+footer {
+  background: #ffffff;
+  border-top: 1px solid #e0e0e0;
+  padding: 40px 60px;
+  color: #1a1a1a;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-weight: 500;
+  margin-right: 25px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #0066ff;
+}
+
+.footer-info p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}

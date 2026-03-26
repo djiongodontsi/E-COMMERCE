@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Connexion</title>
+    <link rel="stylesheet" href="Style/connexion.css" />
+  </head>
+
+  <body>
+    <header>
+      <a href="index.html">
+        <img src="IMG/logo_epsi_8b6f0271b8.png" alt="Logo" />
+      </a>
+
+      <nav>
+        <ul class="un_list">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="a_ propos.html">A propos</a></li>
+          <li><a href="nous_contacter.html">Nous contacter</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="conex">
+      <h2>Connexion</h2>
+      <form action="connexion.php" method="POST">
+        <input type="email" name="email" placeholder="Email" required /><br />
+        <input
+          type="password"
+          name="mot_de_passe"
+          placeholder="Mot de passe"
+          required
+        /><br />
+        <button type="submit">Se connecter</button>
+      </form>
+
+      <p>Pas encore de compte ? <a href="inscription.html">S'inscrire</a></p>
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-links">
+          <a href="#">Mentions légales</a>
+          <a href="#">Confidentialité</a>
+        </div>
+        <div class="footer-info">
+          <p>© 2025 EPSI Tech Store — Tous droits réservés</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        const params = new URLSearchParams(location.search);
+        const msg = document.getElementById('message');
+        if (params.get('registered')) {
+          msg.innerText = 'Inscription réussie ! Vous pouvez vous connecter.';
+          msg.style.color = 'green';
+        } else if (params.get('error')) {
+          const err = params.get('error');
+          if (err === 'invalid')
+            msg.innerText = 'Email ou mot de passe incorrect.';
+          else if (err === 'empty')
+            msg.innerText = 'Remplissez tous les champs.';
+          else msg.innerText = 'Erreur serveur, réessayez.';
+          msg.style.color = 'red';
+        }
+      })();
+    </script>
+    <div id="message"></div>
+  </body>
+</html>
